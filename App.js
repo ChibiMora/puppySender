@@ -10,6 +10,7 @@
 import React, { Component } from 'react';
 import HomeScreen from './js/components/HomeScreen';
 import DetailsScreen from './js/components/DetailsScreen';
+import PreviewScreen from './js/components/PreviewScreen';
 import { createStackNavigator } from 'react-navigation';
 
 
@@ -22,6 +23,7 @@ const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     Detail: DetailsScreen,
+    Preview: PreviewScreen
   },
   {
     initialRouteName: 'Home',

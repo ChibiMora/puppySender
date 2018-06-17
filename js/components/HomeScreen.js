@@ -19,9 +19,7 @@ export default class HomeScreen extends Component {
     this._onNameTextChanged = this._onNameTextChanged.bind(this);
   }
   _onNameTextChanged = (event) => {
-    console.log('nameTextChanged');
     this.setState({name: event.nativeEvent.text});
-    console.log(`Current: ${this.state.name}, Next: ${event.nativeEvent.text}`);
   }
 
   render() {
@@ -31,9 +29,9 @@ export default class HomeScreen extends Component {
         <Text>Let's get ready to send your friends puppies!!!</Text>
         <Text> Enter your name below, so your friends know who sent them a pupper! </Text>
           <View style={styles.flowRight}>
-             <TextInput style={styles.searchInput} placeholder='Name'/>
+             <TextInput style={styles.searchInput} placeholder='Name' onChangeText={(name) => this.setState({name})} />
           </View>
-          <Button title="Submit Name" value={this.state.name} onChange={this._onNameTextChanged} onPress={() => this.props.navigation.navigate('Detail')} />
+          <Button title="Submit Name" value={this.state.name} onChange={this._onNameTextChanged} onPress={() => this.props.navigation.navigate('Detail', {name: this.state.name})}  />
       </View>
     );
   }
