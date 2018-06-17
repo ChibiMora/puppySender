@@ -6,6 +6,8 @@ import {ViroARSceneNavigator } from 'react-viro';
 export default class PreviewScreen extends React.Component {
     constructor (){
         super();
+
+        this.state = {};
     }
     
     render(){
