@@ -8,26 +8,23 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Text,
-  View
-} from 'react-native';
+import HomeScreen from './js/components/HomeScreen';
+import DetailsScreen from './js/components/DetailsScreen';
+import { createStackNavigator } from 'react-navigation';
 
-export default class AppRoot extends Component {
-  constructor() {
-    super();
 
-    this.state = {
-    }
-  }
-
-  // Replace this function with the contents of _getVRNavigator() or _getARNavigator()
-  // if you are building a specific type of experience.
+export default class AppRoot extends Component  {
   render() {
-    return (
-      <View>
-        <Text>Hello World</Text>
-      </View>
-    )
+    return <RootStack />;
   }
 }
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Detail: DetailsScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
