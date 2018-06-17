@@ -1,7 +1,6 @@
 import React from 'react';
 import  { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 
-
 export default class DetailsScreen extends React.Component {
   static navigationOptions = {
     title: 'Deets',
@@ -54,13 +53,9 @@ export default class DetailsScreen extends React.Component {
   }
 }
 
-  const styles = StyleSheet.create({
-    image: {
-      width: 217,
-      height: 138,
-    },
-
-  });
-  
-
-
+const styles = StyleSheet.create({
+  image: {
+    width: 217,
+    height: 138,
+  }
+});

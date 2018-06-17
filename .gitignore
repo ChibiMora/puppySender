@@ -56,3 +56,6 @@ buck-out/
 *.jsbundle
 
 Pods/
+
+#APIKEY
+ViroConfig.js
