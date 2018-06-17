@@ -11,18 +11,11 @@ export default class DetailsScreen extends React.Component {
     super();
 
     this.state = {
-      selectedPuppy: '',
       dogs: [
-        {name: 'Beagle', image: "beagle.png"}, 
-        {name: "Corgi", image: "corgi.png"}
+        {id: 1, name: 'Beagle', image: require('../images/beagle.png'), arFile: 'sample'},
+        {name: 'Corgi', image: require('../images/corgi.png'), arFile: 'fdls'}
       ]
     };
-    this.onPress = this.onPress.bind(this);
-  }
-  onPress = () => {
-    this.setState({
-      selectedPuppy: event.nativeEvent.text
-    });
   }
 
   // _selectedPuppy = (event) => {
@@ -37,30 +30,18 @@ export default class DetailsScreen extends React.Component {
       <ScrollView>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>{name}, Choose a puppy to send:</Text>
-          <Text>Beagle:</Text>
-          <TouchableOpacity activeOpacity={0.5}>
-            <Image source={require('../images/beagle.png')} style={styles.image} onPress={() => this.props.navigation.navigate('Preview', {selectedPuppy: this.state.selectedPuppy})} />
-          </TouchableOpacity>
-          <Text>Corgi:</Text>
-          <Image source={require('../images/corgi.png')} style={styles.image}/>
-          <Text>Dog with collar</Text>
-          <Image source={require('../images/dogwithcollar.png')} style={styles.image}/>
-          <Text>Flying Pup:</Text>
-          <Image source={require('../images/flyinpup.png')} style={styles.image}/>
-          <Text>German Shepard</Text>
-          <Image source={require('../images/germanshepard.png')} style={styles.image}/>
-          <Text>Pupper:</Text>
-          <Image source={require('../images/normpup.png')} style={styles.image}/>
-          <Text>Water Pup!:</Text>
-          <Image source={require('../images/otter.png')} style={styles.image}/>
-          <Text>Poodle</Text>
-          <Image source={require('../images/poodle.png')} style={styles.image}/>
-          <Text>Pug with cone:</Text>
-          <Image source={require('../images/pugwithcone.png')} style={styles.image}/>
-          <Text>Doggy</Text>
-          <Image source={require('../images/regdog.png')} style={styles.image}/>
-          <Text>Sitting pup</Text>
-          <Image source={require('../images/sittingdog.png')} style={styles.image}/>
+        {
+          this.state.dogs.map((dog)=>{
+            return (
+              <View key={dog.id}>
+                <Text>{dog.name}</Text>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => this.props.navigation.navigate('Preview', {dog: dog, name: name})}>
+                  <Image source={dog.image} style={styles.image} />
+                </TouchableOpacity>
+              </View>
+            );
+          })
+        }
         </View>
       </ScrollView>
     );
