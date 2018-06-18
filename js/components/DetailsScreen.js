@@ -3,7 +3,7 @@ import  { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity} from 'rea
 
 export default class DetailsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Deets',
+    title: 'Details',
   };
   
   constructor() {

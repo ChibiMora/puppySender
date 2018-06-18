@@ -4,6 +4,10 @@ import {StyleSheet} from 'react-native';
 import {ViroARSceneNavigator } from 'react-viro';
 
 export default class PreviewScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Preview',
+      };
+      
     constructor (){
         super();
 
