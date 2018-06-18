@@ -13,8 +13,9 @@ export default class PreviewScreen extends React.Component {
     render(){
         const {navigation} = this.props;
         const name = navigation.getParam('name');
+        const dog = navigation.getParam('dog')
         return (
-    <ViroARSceneNavigator apiKey={ViroConfig.apiKey} initialScene={{scene: require('./scenes/ViewDogScene'), passProps: {randomProp: "David"}}} />
+    <ViroARSceneNavigator apiKey={ViroConfig.apiKey} initialScene={{scene: require('./scenes/ViewDogScene'), passProps: {name: name, dog: dog}}} />
         )
     }
 }

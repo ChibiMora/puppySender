@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {StyleSheet} from 'react-native';
-import { ViroARScene, ViroText, ViroConstants, ViroBox, ViroMaterials, ViroAmbientLight, ViroSpotLight, Viro3DObject } from 'react-viro';
+import {View, TouchableHighlight, Text} from 'react-native';
+import { ViroARScene, ViroText, ViroConstants, ViroARPlaneSelector, ViroBox, ViroMaterials, ViroAmbientLight, ViroSpotLight, Viro3DObject } from 'react-viro';
 
 export default class ViewDogScene extends Component {
     constructor(){
@@ -9,7 +9,7 @@ export default class ViewDogScene extends Component {
             text: "Initializing AR..."
         };
         this._onInitialized = this._onInitialized.bind(this);
-        //console.log('PROPS========', this.props);
+        
     }
 
     _onInitialized(state){
@@ -22,12 +22,21 @@ export default class ViewDogScene extends Component {
         }
     }
 
+
+
     render() {
-    // console.log("PROPS", this.props)
+          const sentText = `${this.props.name} sent you a puppy!`;
         return (
             <ViroARScene onTrackingUpdated={this._onInitialized}>
-            <ViroText text={this.props.randomProp} scale={[0.5, 0.5, 0.5]} position={[0, 0, -1]} />
-            {/* <Viro3DObject source={require('')} */}
+            
+
+                <ViroAmbientLight color="#aaaaaa" />
+                <ViroText text={sentText} scale={[0.5, 0.5, 0.5]} position={[0, 0, -1]} transformBehaviors={['billboardY']}/>
+                {/* <ViroSpotLight innerAngle={5} outerAngle={90} direction={[0, -1, -0.2]} position={[0, 3, 1]} color="#ffffff" castsShadow={true} /> */}
+                {/* <ViroARPlaneSelector> */}
+                    <Viro3DObject
+                    source={this.props.dog.objFile} resources={this.props.objResources} position={[0, -1, -1]} scale={this.props.dog.scale} type="OBJ" />
+                {/* </ViroARPlaneSelector> */}
             </ViroARScene>
         )
     }

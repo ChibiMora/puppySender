@@ -11,17 +11,17 @@ export default class DetailsScreen extends React.Component {
 
     this.state = {
       dogs: [
-        {id: 1, name: 'Beagle', image: require('../images/beagle.png'), arFile: require('../res/beagle/Mesh_Beagle.obj')},
-        {id: 2, name: 'Corgi', image: require('../images/corgi.png'), arFile: require('../res/corgi/model.obj')},
-        {id: 3, name: 'Pupper with collar', image: require('../images/dogwithcollar.png'), arFile: require('../res/dogwithcollar/dogwithcollar.obj')},
-        {id: 4, name: 'Flying pup', image: require('../images/flyinpup.png'), arFile: require('../res/flyingPup/model.obj')},
-        {id: 5, name: 'German Shepard', image: require('../images/germanshepard.png'), arFile: require('../res/germanshepard/model.obj')},
-        {id: 6, name: 'Pupper', image: require('../images/normpup.png'), arFile: require('../res/norm dog/Booboo.obj')},
-        {id: 7, name: 'Water Dog', image: require('../images/otter.png'), arFile: require('../res/RiverOtter/RiverOtter.obj')},
-        {id: 8, name: 'Poodle', image: require('../images/poodle.png'), arFile: require('../res/Poodle/Poodle_01.obj')},
-        {id: 9, name: 'Pug', image: require('../images/pug.png'), arFile: require('../res/pug/model.obj')},
-        {id: 10, name: 'Pylon Pug', image: require('../images/pugwithcone.png'), arFile: require('../res/pylonPug/model.obj')},
-        {id: 11, name: 'Doggie', image: require('../images/regdog.png'), arFile: require('../res/regpup/dog.obj')}
+        {id: 2, name: 'Corgi', image: require('../images/corgi.png'), objFile: require('../res/corgi/model.obj'), objResources: [require('../res/corgi/materials.mtl')], scale: [1, 1, 1]},
+        {id: 4, name: 'Flying pup', image: require('../images/flyinpup.png'), objFile: require('../res/flyingPup/model.obj'), objResources: [require('../res/flyingPup/materials.mtl')], scale: [1, 1, 1]},
+        {id: 5, name: 'German Shepard', image: require('../images/germanshepard.png'), objFile: require('../res/germanshepard/model.obj'), objResources: [require('../res/germanshepard/materials.mtl'), require('../res/germanshepard/texture.jpg')], scale: [0.025, 0.025, 0.025]},
+        {id: 9, name: 'Pug', image: require('../images/pug.png'), objFile: require('../res/pug/model.obj'), objResources: [require('../res/pug/materials.mtl')], scale: [1, 1, 1]},
+        {id: 10, name: 'Pylon Pug', image: require('../images/pugwithcone.png'), objFile: require('../res/pylonPug/model.obj'), objResources: []},
+        {id: 11, name: 'Doggie', image: require('../images/regdog.png'), objFile: require('../res/regpup/dog.obj'), scale: [0.00129, 0.00129, 0.00129]},
+        {id: 7, name: 'Water Dog', image: require('../images/otter.png'), objFile: require('../res/RiverOtter/RiverOtter.obj'), objResources: [require('../res/RiverOtter/RiverOtter_BaseColor.png'), require('../res/RiverOtter/RiverOtter.mtl')], scale: [0.09, 0.09, 0.09]},
+        {id: 1, name: 'Beagle', image: require('../images/beagle.png'), objFile: require('../res/beagle/Mesh_Beagle.obj'),  scale: [0.0129, 0.0129, 0.0129]},
+        {id: 3, name: 'Pupper with collar', image: require('../images/dogwithcollar.png'), objFile: require('../res/dogwithcollar/dogwithcollar.obj'),  objResources: [require('../res/dogwithcollar/material.mtl'), require('../res/dogwithcollar/Dog_w_CollarSG5.png')], scale: [0.25, 0.25, 0.25]},
+        {id: 6, name: 'Pupper', image: require('../images/normpup.png'), objFile: require('../res/normdog/Booboo.obj'), objResources: [require('../res/normdog/Booboo.mtl'), require('../res/normdog/booeye.jpg'), require('../res/normdog/boojColor.png')], scale: [1, 1, 1]},
+        // {id: 8, name: 'Poodle', image: require('../images/poodle.png'), objFile: require('../res/Poodle/Poodle_01.obj'), objResources: [require('../res/Poodle/Poodle_01.mtl')], scale: [1, 1, 1]}
       ]
     };
   }
