@@ -5,3 +5,5 @@ AppRegistry.registerComponent('PuppySender', () => AppRoot);
 
 // The below line is necessary for use with the TestBed App
 //AppRegistry.registerComponent('ViroSample', () => App);
+
+require('./js/Subscribe');

@@ -13,7 +13,6 @@ import DetailsScreen from './js/components/DetailsScreen';
 import PreviewScreen from './js/components/PreviewScreen';
 import { createStackNavigator } from 'react-navigation';
 
-
 export default class AppRoot extends Component  {
   render() {
     return <RootStack />;
