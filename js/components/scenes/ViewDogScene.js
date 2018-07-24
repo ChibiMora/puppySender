@@ -13,11 +13,11 @@ export default class ViewDogScene extends Component {
     }
 
     _onInitialized(state){
-        if(state == ViroConstants.TRACKING_NORMAL){
+        if (state === ViroConstants.TRACKING_NORMAL){
             this.setState({
                 text: "Your name here!"
             });
-        } else if (state == ViroConstants.TRACKING_NONE){
+        } else if (state === ViroConstants.TRACKING_NONE){
              // Handle loss of tracking
         }
     }
@@ -38,7 +38,7 @@ export default class ViewDogScene extends Component {
                     source={this.props.dog.objFile} resources={this.props.objResources} position={[0, -1, -1]} scale={this.props.dog.scale} type="OBJ" />
                 {/* </ViroARPlaneSelector> */}
             </ViroARScene>
-        )
+        );
     }
 }
 
